@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eldontes
+namespace Kereses
 {
   class Program
   {
@@ -12,20 +12,28 @@ namespace Eldontes
     {
       int[] tomb = new int[] { 2, 3, 4, 1, 5, 10, 6, 8 };
 
+      foreach (var t in tomb)
+      {
+        Console.Write("{0}, ",t);
+      }
+
+      Console.WriteLine("\nMilyen számot keressünk: ");
+      int melyikSzam = Convert.ToInt32(Console.ReadLine());
+
       int i = 0;
 
-      while (i < tomb.Length && tomb[i] != 10 )
+      while (i < tomb.Length && tomb[i] != melyikSzam)
       {
         i++;
       }
 
       if (i < tomb.Length)
       {
-        Console.WriteLine("Van 10 az elemek között");
+        Console.WriteLine("{0}-ik helyen megtaláltuk",i+1);
       }
       else
       {
-        Console.WriteLine("Nincs 10 az elemek között");
+        Console.WriteLine("Nem volt ilyen.");
       }
 
       Console.ReadKey();
